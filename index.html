@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A joyful interactive birthday celebration made especially for someone wonderful."
+    />
+    <meta name="theme-color" content="#ff6b58" />
+    <title>Birthday Bloom</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to the birthday message</a>
+
+    <div class="page-shell">
+      <header class="site-header" aria-label="Birthday Bloom">
+        <a class="wordmark" href="#top" aria-label="Birthday Bloom home">
+          <span class="wordmark-mark" aria-hidden="true">✦</span>
+          <span>birthday bloom</span>
+        </a>
+        <p class="header-note" data-config="headerNote"></p>
+      </header>
+
+      <main id="main-content">
+        <section class="hero" id="top" aria-labelledby="birthday-heading">
+          <div class="hero-copy">
+            <p class="eyebrow"><span aria-hidden="true">✦</span><span data-config="heroEyebrow"></span></p>
+            <h1 id="birthday-heading"><span data-config="heroHeadline"></span><br /><em data-config="recipient"></em>.</h1>
+            <p class="hero-intro" data-config="heroIntro"></p>
+            <button class="wish-button" type="button" id="wishButton" aria-describedby="wishHint">
+              <span data-config="wishButtonLabel"></span>
+              <span class="button-spark" aria-hidden="true">✦</span>
+            </button>
+            <p id="wishHint" class="button-hint" data-config="wishHint"></p>
+          </div>
+
+          <div class="hero-art" aria-hidden="true">
+            <div class="sun-disk"></div>
+            <div class="ribbon ribbon-one"></div>
+            <div class="ribbon ribbon-two"></div>
+            <div class="balloon balloon-coral"><span></span></div>
+            <div class="balloon balloon-butter"><span></span></div>
+            <div class="balloon balloon-pink"><span></span></div>
+            <div class="flower flower-one"><i></i><i></i><i></i><i></i><b></b></div>
+            <div class="flower flower-two"><i></i><i></i><i></i><i></i><b></b></div>
+            <div class="cake-scene">
+              <div class="cake-cherry"></div>
+              <div class="cake-candle"><span class="flame"></span></div>
+              <div class="cake-frosting"></div>
+              <div class="cake-top"><span></span><span></span><span></span></div>
+              <div class="cake-base"><span></span><span></span><span></span><span></span></div>
+              <div class="cake-plate"></div>
+            </div>
+            <span class="spark spark-one">✦</span>
+            <span class="spark spark-two">✦</span>
+            <span class="spark spark-three">·</span>
+          </div>
+        </section>
+
+        <section class="message-section" aria-labelledby="message-heading">
+          <div class="section-label"><span>01</span><b data-config="messageLabel"></b></div>
+          <div class="message-layout">
+            <h2 id="message-heading" data-config="messageHeading"></h2>
+            <article class="letter-card">
+              <p class="letter-date" data-config="letterDate"></p>
+              <p><span data-config="letterGreeting"></span> <span data-config="recipient"></span>,</p>
+              <p data-config="letterBody"></p>
+              <p class="letter-signoff" data-config="signoff"></p>
+              <span class="letter-seal" aria-hidden="true">♥</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="joy-section" aria-labelledby="joy-heading">
+          <div class="section-label"><span>02</span><b data-config="joyLabel"></b></div>
+          <div class="joy-head">
+            <h2 id="joy-heading" data-config="joyHeading"></h2>
+            <p data-config="joyIntro"></p>
+          </div>
+          <ul class="joy-list" role="list">
+            <li><span class="joy-number">01</span><span data-config="joyOne"></span><i aria-hidden="true">☀</i></li>
+            <li><span class="joy-number">02</span><span data-config="joyTwo"></span><i aria-hidden="true">✦</i></li>
+            <li><span class="joy-number">03</span><span data-config="joyThree"></span><i aria-hidden="true">♥</i></li>
+            <li><span class="joy-number">04</span><span data-config="joyFour"></span><i aria-hidden="true">♫</i></li>
+          </ul>
+        </section>
+
+        <section class="celebrate-section" aria-labelledby="celebrate-heading">
+          <div class="celebrate-card">
+            <span class="card-star star-left" aria-hidden="true">✦</span>
+            <span class="card-star star-right" aria-hidden="true">✦</span>
+            <p class="eyebrow centered"><span aria-hidden="true">✦</span><span data-config="celebrateEyebrow"></span></p>
+            <h2 id="celebrate-heading" data-config="celebrateHeading"></h2>
+            <p data-config="celebrateCopy"></p>
+            <button class="secondary-button" type="button" id="celebrateAgain">
+              <span data-config="celebrateButtonLabel"></span> <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span data-config="footerLead"></span>
+        <strong data-config="recipient"></strong>
+        <span class="footer-star" aria-hidden="true">✦</span>
+        <span data-config="footer"></span>
+      </footer>
+    </div>
+
+    <div class="celebration-layer" id="celebrationLayer" aria-hidden="true"></div>
+    <canvas class="confetti-canvas" id="confettiCanvas" aria-hidden="true"></canvas>
+    <p class="sr-only" id="celebrationStatus" role="status" aria-live="polite"></p>
+
+    <dialog class="wish-dialog" id="wishDialog" aria-labelledby="wish-title">
+      <button class="dialog-close" type="button" id="closeDialog" aria-label="Close birthday wish">×</button>
+      <div class="dialog-icon" aria-hidden="true">✦</div>
+      <p class="eyebrow centered" data-config="dialogEyebrow"></p>
+      <h2 id="wish-title" data-config="dialogHeading"></h2>
+      <p data-config="dialogCopy"></p>
+      <button class="wish-button dialog-button" type="button" id="closeDialogButton" data-config="dialogButtonLabel"></button>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
